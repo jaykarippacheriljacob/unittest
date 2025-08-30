@@ -6,7 +6,7 @@
 /*   By: jkarippa <jkarippa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:36:17 by jkarippa          #+#    #+#             */
-/*   Updated: 2025/08/30 20:07:32 by jkarippa         ###   ########.fr       */
+/*   Updated: 2025/08/30 20:50:52 by jkarippa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	atoi_tester(void)
 		ft_printf("\033[32m[OK]\033[32m\n");
 	else
 		ft_printf("\033[31m[KO]\033[0m\n");
-	ft_printf("ATOI: Wrong test : ");
+	ft_printf("ATOI: Space test : ");
 	if (atoi_test_5())
 		ft_printf("\033[32m[OK]\033[32m\n");
 	else
