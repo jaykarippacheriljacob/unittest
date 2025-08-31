@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 16:31:28 by jkarippa          #+#    #+#             */
-/*   Updated: 2025/08/31 21:37:12 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/08/31 22:53:31 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 int	main(void)
 {
-	// dummy_launcher();
-	// str_len_launcher();
-	// atoi_launcher();
+	dummy_launcher();
+	str_len_launcher();
+	atoi_launcher();
 	itoa_launcher();
 	return (0);
 }
