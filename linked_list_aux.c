@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   linked_list_aux.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkarippa <jkarippa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 20:02:37 by jkarippa          #+#    #+#             */
-/*   Updated: 2025/08/31 20:02:42 by jkarippa         ###   ########.fr       */
+/*   Updated: 2025/08/31 21:41:55 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,9 @@ t_unit_test	*create_node(char *name, t_fct_ptr *fct)
 	return (new_node);
 }
 
-void	delete_node(t_unit_test *node)
-{
-	free(node);
-}
-
 void	add_node(t_unit_test *testlist, t_unit_test *node)
 {
-	t_unit_test *current_node;
-
-	// if (testlist == NULL)
-	// 	testlist = node;
-	// else
+	t_unit_test	*current_node;
 	{
 		current_node = testlist;
 		while (current_node->next != NULL)

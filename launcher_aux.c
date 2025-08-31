@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   launcher_aux.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkarippa <jkarippa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 20:01:58 by jkarippa          #+#    #+#             */
-/*   Updated: 2025/08/31 20:02:04 by jkarippa         ###   ########.fr       */
+/*   Updated: 2025/08/31 21:43:41 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <sys/wait.h>
-
-// #include "../functions_to_test/tested.h"
+#include "atoi/atoi_tests.h"
+#include "itoa/itoa_tests.h"
 #include "lib/ft_printf/ft_printf.h"
 #include "strlen/str_len_tests.h"
 #include "unit_tests.h"
+#include <stdlib.h>
+#include <sys/wait.h>
 
 t_unit_test	*load_test(t_unit_test *testlist, char *name, t_fct_ptr fct)
 {
@@ -29,9 +29,29 @@ t_unit_test	*load_test(t_unit_test *testlist, char *name, t_fct_ptr fct)
 	return (testlist);
 }
 
+void	print_signal(int status)
+{
+	if (WTERMSIG(status) == 11)
+		ft_printf("\033[31m[SEGFAULT]\033[0m\n");
+	else if (WTERMSIG(status) == 7)
+		ft_printf("\033[31m[BUSERROR]\033[0m\n");
+	else
+		ft_printf("exited because of some other signal.\n");
+}
+
+void	print_exit(int status, int *successes)
+{
+	if (WEXITSTATUS(status) == 1)
+	{
+		ft_printf(" \033[32m[OK]\033[0m\n");
+		(*successes)++;
+	}
+	else if (WEXITSTATUS(status) == 0)
+		ft_printf("\033[31m[KO]\033[0m\n");
+}
+
 void	launch_tests(t_unit_test *testlist)
 {
-	int	pid;
 	int	status;
 	int	total;
 	int	successes;
@@ -42,48 +62,15 @@ void	launch_tests(t_unit_test *testlist)
 	{
 		total++;
 		ft_printf("%s ", testlist->name);
-		pid = fork();
-		if (pid < 0)
-		{
-			ft_printf("Fork failed.\n");
-			exit(EXIT_FAILURE);
-		}
-		else if (pid == 0)
-		{
-			exit((*testlist->fct)());
-		}
-		else
-		{
-			wait(&status);
-			if (WIFEXITED(status))
-			{
-				if (WEXITSTATUS(status) == 1)
-				{
-					ft_printf(" [OK]\n");
-					successes++;
-				}
-				if (WEXITSTATUS(status) == 0)
-					ft_printf(" [KO]\n");
-			}
-			else if (WIFSIGNALED(status))
-			{
-				if (WTERMSIG(status) == 11)
-					ft_printf("[SEGFAULT]\n");
-				else if (WTERMSIG(status) == 7)
-					ft_printf("[BUSERROR]\n");
-				else
-					ft_printf("exited because of some other signal.\n");
-			}
-			testlist = testlist->next;
-		}
+		fork_help(testlist);
+		wait(&status);
+		if (WIFEXITED(status))
+			print_exit(status, &successes);
+		else if (WIFSIGNALED(status))
+			print_signal(status);
+		testlist = testlist->next;
 	}
 	ft_printf("\n%d/%d tests checked\n", successes, total);
-	// go through the linked list
-	// print first half of output (fct_2_be_tested : test_name)
-	// fork child
-	// give test_fct to child
-	// wait for child to exit
-	// interpret exitcode and print second half of output
 }
 
 void	cleanup(t_unit_test *testlist)
@@ -94,6 +81,6 @@ void	cleanup(t_unit_test *testlist)
 	{
 		temp_node = testlist;
 		testlist = testlist->next;
-		delete_node(temp_node);
+		free(temp_node);
 	}
 }

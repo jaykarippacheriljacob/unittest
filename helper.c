@@ -1,49 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   helper.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 16:31:28 by jkarippa          #+#    #+#             */
-/*   Updated: 2025/08/31 21:37:12 by fbraune          ###   ########.fr       */
+/*   Created: 2025/08/31 21:19:33 by fbraune           #+#    #+#             */
+/*   Updated: 2025/08/31 21:28:19 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "atoi/atoi_tests.h"
+#include "itoa/itoa_tests.h"
 #include "lib/ft_printf/ft_printf.h"
+#include "strlen/str_len_tests.h"
 #include "unit_tests.h"
-#include <stdio.h>
+#include <stdlib.h>
 #include <sys/wait.h>
-#include <unistd.h>
 
-int	main(void)
+int	ft_strcmp(char *s1, char *s2)
 {
-	// dummy_launcher();
-	// str_len_launcher();
-	// atoi_launcher();
-	itoa_launcher();
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
 	return (0);
 }
-// int	no_of_tests;
-// int	pid;
-// int	i;
-// int	status;
 
-// no_of_tests = 16;
-// i = 0;
-// while (i < no_of_tests)
-// {
-// 	if (fork() == 0)
-// 	{
-// 		pid = ft_printf("Test[%d]\n", i);
-// 		ft_printf("%d\n", pid);
-// 		exit(0);
-// 	}
-// 	else
-// 	{
-// 		wait(&status);
-// 		ft_printf("status: %d\n", WIFEXITED(status));
-// 	}
-// 	i++;
-// }
-// }
+void	fork_help(t_unit_test *testlist)
+{
+	int	pid;
+
+	pid = fork();
+	if (pid < 0)
+	{
+		ft_printf("Fork failed.\n");
+		exit(EXIT_FAILURE);
+	}
+	else if (pid == 0)
+		exit((*testlist->fct)());
+}

@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_maxint_test.c                                   :+:      :+:    :+:   */
+/*   atoi_tests.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 19:01:15 by fbraune           #+#    #+#             */
-/*   Updated: 2025/08/31 21:08:59 by fbraune          ###   ########.fr       */
+/*   Created: 2025/08/31 20:44:41 by fbraune           #+#    #+#             */
+/*   Updated: 2025/08/31 20:59:46 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../functions_to_test/tested.h"
+#ifndef ATOI_TESTS_H
+# define ATOI_TESTS_H
 
-int	atoi_test_1(void)
-{
-	int	a;
-	int	b;
+int	atoi_test_1(void);
+int	atoi_test_2(void);
+int	atoi_test_3(void);
+int	atoi_test_4(void);
+int	atoi_test_5(void);
 
-	a = 2147483647;
-	b = ft_atoi("2147483647");
-	if (a != b)
-		return (false);
-	return (true);
-}
+#endif // ATOI_TESTS_H

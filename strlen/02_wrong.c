@@ -3,26 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   02_wrong.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daspring <daspring@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:13:12 by fbraune           #+#    #+#             */
-/*   Updated: 2025/08/31 18:50:51 by daspring         ###   ########.fr       */
+/*   Updated: 2025/08/31 21:15:12 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../functions_to_test/tested.h"
 
-int str_len_test_2(void)
+int	str_len_test_2(void)
 {
-	// printf("BAA\n");
-	// fflush(stdout);
-
-	int a;
-	int b;
+	int	a;
+	int	b;
 
 	a = 1;
 	b = ft_strlen("hallo");
 	if (a != b)
 		return (false);
-	return(true);
+	return (true);
 }

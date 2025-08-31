@@ -2,6 +2,7 @@ NAME	=	test
 CC	=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 SRC	=	main.c \
+		helper.c \
 		strlen/00_str_len_launcher.c \
 		launcher_aux.c \
 		linked_list_aux.c \
@@ -10,7 +11,23 @@ SRC	=	main.c \
 		strlen/03_empty.c \
 		strlen/04_segfault.c \
 		strlen/05_longer_str.c \
-		functions_to_test/ft_strlen.c
+		functions_to_test/ft_strlen.c \
+		dummy/00_dummy_launcher.c \
+		dummy/01_buserror.c \
+		functions_to_test/ft_atoi.c \
+		functions_to_test/ft_itoa.c \
+		itoa/00_itoa_launcher.c \
+		itoa/01_intmax.c \
+		itoa/02_intmin.c \
+		itoa/03_negative.c \
+		itoa/04_0.c \
+		itoa/05_wrong.c \
+		atoi/00_atoi_launcher.c \
+		atoi/01_maxint_test.c \
+		atoi/02_minint_test.c \
+		atoi/03_fail_test.c \
+		atoi/04_negative_test.c \
+		atoi/05_spaces_test.c 
 OBJ	=	$(SRC:.c=.o)
 PRINTF	=	lib/ft_printf/libftprintf.a
 PRINTF_DIR	=	lib/ft_printf

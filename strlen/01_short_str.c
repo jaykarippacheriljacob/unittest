@@ -3,35 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   01_short_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daspring <daspring@student.42heilbronn.    +#+  +:+       +#+        */
+/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:12:50 by fbraune           #+#    #+#             */
-/*   Updated: 2025/08/31 19:27:48 by daspring         ###   ########.fr       */
+/*   Updated: 2025/08/31 21:15:08 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../functions_to_test/tested.h"
-
-
 #include <unistd.h>
 
-int str_len_test_1(void)
+int	str_len_test_1(void)
 {
-	// write(1, "BOO\n", 4);
-	// printf("BOO\n");
-	// fflush(stdout);
-
-	sleep(2);
-
-	int a;
-	int b;
+	int	a;
+	int	b;
 
 	a = 5;
-	// a = 6;
 	b = ft_strlen("hallo");
-
 	return (a == b);
-	// if (a != b)
-	// 	return (false);
-	// return(true);
 }

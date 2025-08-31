@@ -6,16 +6,16 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:04:29 by fbraune           #+#    #+#             */
-/*   Updated: 2025/08/30 19:09:29 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/08/31 21:09:17 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../functions_to_test_tested.h"
+#include "../functions_to_test/tested.h"
 
-bool atoi_test_5(void)
+int	atoi_test_5(void)
 {
-	int a;
-	int b;
+	int	a;
+	int	b;
 
 	a = 42;
 	b = ft_atoi("000042");
