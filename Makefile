@@ -3,10 +3,13 @@ CC	=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 SRC	=	main.c \
 		strlen/00_str_len_launcher.c \
+		launcher_aux.c \
+		linked_list_aux.c \
 		strlen/01_short_str.c \
 		strlen/02_wrong.c \
 		strlen/03_empty.c \
 		strlen/04_segfault.c \
+		strlen/05_longer_str.c \
 		functions_to_test/ft_strlen.c
 OBJ	=	$(SRC:.c=.o)
 PRINTF	=	lib/ft_printf/libftprintf.a

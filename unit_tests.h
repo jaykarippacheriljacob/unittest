@@ -6,7 +6,7 @@
 /*   By: daspring <daspring@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 21:05:34 by jkarippa          #+#    #+#             */
-/*   Updated: 2025/08/31 18:49:15 by daspring         ###   ########.fr       */
+/*   Updated: 2025/08/31 19:31:51 by daspring         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ typedef struct s_unit_test{
 }	t_unit_test;
 
 
-void	str_len_launcher(void);
+void		str_len_launcher(void);
 t_unit_test	*load_test(t_unit_test *testlist, char *name, t_fct_ptr fct);
-void	launch_tests(t_unit_test *testlist);
+void		launch_tests(t_unit_test *testlist);
+void		cleanup(t_unit_test *testlist);
 
 t_unit_test	*create_node(char *name, t_fct_ptr *fct);
 void		add_node(t_unit_test *testlist, t_unit_test *node);

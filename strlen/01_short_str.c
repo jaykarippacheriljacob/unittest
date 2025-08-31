@@ -6,7 +6,7 @@
 /*   By: daspring <daspring@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:12:50 by fbraune           #+#    #+#             */
-/*   Updated: 2025/08/31 18:50:47 by daspring         ###   ########.fr       */
+/*   Updated: 2025/08/31 19:27:48 by daspring         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int str_len_test_1(void)
 	// write(1, "BOO\n", 4);
 	// printf("BOO\n");
 	// fflush(stdout);
+
+	sleep(2);
 
 	int a;
 	int b;
