@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*   By: daspring <daspring@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:08:00 by fbraune           #+#    #+#             */
-/*   Updated: 2025/08/30 19:08:18 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/08/31 17:21:58 by daspring         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,18 @@
 
 size_t	ft_strlen(const char *s)
 {
-	const char	*counter;
+	int len = 0;
 
-	counter = (char *)s;
-	while (*counter++ != '\0')
-		;
-	return (counter - s - 1);
+	while (*s != '\0') {
+		len++;
+		s++;
+	}
+	return (len);
+
+	// const char * counter;
+
+	// counter = (char *)s;
+	// while (*counter++ != '\0')
+	// 	;
+	// return (counter - s - 1);
 }

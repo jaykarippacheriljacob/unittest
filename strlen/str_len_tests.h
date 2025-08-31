@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   str_len_tests.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jkarippa <jkarippa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daspring <daspring@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 21:05:34 by jkarippa          #+#    #+#             */
-/*   Updated: 2025/08/30 21:35:51 by jkarippa         ###   ########.fr       */
+/*   Updated: 2025/08/31 17:39:46 by daspring         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STR_LEN_TESTS_H
 # define STR_LEN_TESTS_H
 
-bool	str_len_test_1(void);
-bool	str_len_test_2(void);
+int	str_len_test_1(void);
+int	str_len_test_2(void);
 bool	str_len_test_3(void);
 bool	str_len_test_4(void);
 bool	str_len_test_5(void);

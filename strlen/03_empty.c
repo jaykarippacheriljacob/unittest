@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_emty.c                                          :+:      :+:    :+:   */
+/*   03_empty.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*   By: daspring <daspring@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:13:29 by fbraune           #+#    #+#             */
-/*   Updated: 2025/08/30 19:14:41 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/08/31 17:26:14 by daspring         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 bool str_len_test_3(void)
 {
+	// printf("BEE\n");
+	// fflush(stdout);
+
 	int a;
 	int b;
 
@@ -21,5 +24,5 @@ bool str_len_test_3(void)
 	b = ft_strlen("");
 	if (a != b)
 		return (false);
-	return(true)
+	return(true);
 }
