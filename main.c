@@ -6,7 +6,7 @@
 /*   By: daspring <daspring@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 16:31:28 by jkarippa          #+#    #+#             */
-/*   Updated: 2025/08/31 15:44:05 by daspring         ###   ########.fr       */
+/*   Updated: 2025/08/31 18:49:00 by daspring         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(void)
 	str_len_launcher();
 
 	return (0);
+}
 	// int	no_of_tests;
 	// int	pid;
 	// int	i;
@@ -45,4 +46,4 @@ int	main(void)
 	// 	}
 	// 	i++;
 	// }
-}
+// }

@@ -6,7 +6,7 @@
 /*   By: daspring <daspring@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:34:37 by jkarippa          #+#    #+#             */
-/*   Updated: 2025/08/31 18:33:33 by daspring         ###   ########.fr       */
+/*   Updated: 2025/08/31 18:53:17 by daspring         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ void	str_len_launcher(void)
 	testlist = NULL;
 	testlist = load_test(testlist, "STRLEN: basic test", str_len_test_1);
 	testlist = load_test(testlist, "STRLEN: wrong test", str_len_test_2);
-	// testlist = load_test(testlist, "STRLEN: empty test", str_len_test_3);
+	testlist = load_test(testlist, "STRLEN: empty test", str_len_test_3);
+	testlist = load_test(testlist, "STRLEN: segfault test", str_len_test_4);
 	// load more tests
 
 	launch_tests(testlist);
@@ -116,7 +117,7 @@ t_unit_test	*create_node(char *name, t_fct_ptr *fct)
 
 	new_node = malloc(sizeof(t_unit_test));
 	new_node->name = name;
-	new_node->fct = fct;
+	new_node->fct = *fct;
 	new_node->next = NULL;
 
 	return (new_node);

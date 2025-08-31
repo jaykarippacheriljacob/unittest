@@ -6,6 +6,7 @@ SRC	=	main.c \
 		strlen/01_short_str.c \
 		strlen/02_wrong.c \
 		strlen/03_empty.c \
+		strlen/04_segfault.c \
 		functions_to_test/ft_strlen.c
 OBJ	=	$(SRC:.c=.o)
 PRINTF	=	lib/ft_printf/libftprintf.a

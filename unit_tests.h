@@ -6,7 +6,7 @@
 /*   By: daspring <daspring@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 21:05:34 by jkarippa          #+#    #+#             */
-/*   Updated: 2025/08/31 17:50:51 by daspring         ###   ########.fr       */
+/*   Updated: 2025/08/31 18:49:15 by daspring         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_unit_test t_unit_test;
 
 typedef struct s_unit_test{
 	char		*name;
-	t_fct_ptr	*fct;
+	t_fct_ptr	fct;
 
 	t_unit_test	*next;
 }	t_unit_test;
